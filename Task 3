@@ -16,8 +16,6 @@ int main()
 
     cout << "Enter the total number of students: ";
     cin >> numStudents;
-
-    // Input the student names and their corresponding grades.
     for (int i = 0; i < numStudents; ++i) {
         Student student;
         cout << "Enter the name of student " << i + 1 << ": "<<endl;
@@ -26,14 +24,11 @@ int main()
         cin >> student.grade;
         students.push_back(student);
     }
-
-    // Calculate the average grade
     double sumGrades = 0.0;
     for (const auto& student : students) {
         sumGrades += student.grade;
     }
     double averageGrade = sumGrades / numStudents;
-// Find highest and lowest grades
     double highestGrade = students[0].grade;
     double lowestGrade = students[0].grade;
     for (const auto& student : students) {
